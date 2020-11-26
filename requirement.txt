@@ -11,7 +11,6 @@ iniconfig==1.1.1
 itsdangerous==1.1.0
 Jinja2==2.11.2
 joblib==0.17.0
-logging==0.4.9.6
 MarkupSafe==1.1.1
 numpy==1.19.2
 packaging==20.4
