@@ -10,10 +10,10 @@ from dumper import dump
 app = FastAPI()
 
 
-@app.get('/')
-def index():
-    return {"Home": "Oolu churn prediction"}
-
+# @app.get('/')
+# def index():
+#     return {"Home": "Oolu churn prediction"}
+#
 
 class Account(BaseModel):
     account_id: int
