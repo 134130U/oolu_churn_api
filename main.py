@@ -30,8 +30,13 @@ class Account(BaseModel):
 @app.post('/predictions')
 def predictions(accounts: List[Account]):
     data = pd.DataFrame([account.__dict__ for account in accounts])
+    df = data[['account_id']]
+    df['churn_prob'] = predict.make_prediction(data)
+    result = df.to_json(orient="records")
+    parsed = json.loads(result)
+
     # dump(list(predict.make_prediction(data)))
-    return {'account_id': list(data['account_id']), 'churn_prob': list(predict.make_prediction(data))}
+    return {'payload': (json.dumps(parsed, indent=0))}
 
 
 if __name__ == '__main__':
