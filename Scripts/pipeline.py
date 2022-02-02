@@ -1,7 +1,7 @@
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 from Scripts import prepare_data as pp, config
-# from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 
 churn_pipe = Pipeline(

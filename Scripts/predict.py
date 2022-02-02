@@ -1,9 +1,10 @@
+from Scripts.data_management import load_pipeline
 from Scripts import config
-import joblib
 
 
-# pipeline_file_name = f"{config.PIPELINE_SAVE_FILE}.pkl"
-churn_pipe = joblib.load(config.PACKAGE_ROOT / 'oolu_churn_model.pkl')
+pipeline_file_name = f"{config.PIPELINE_SAVE_FILE}.pkl"
+# churn_pipe = joblib.load('/home/aims/PycharmProjects/oolu churn/trained_models/random_forest_output_v_model.pkl')
+churn_pipe = load_pipeline(file_name=pipeline_file_name)
 
 
 def make_prediction(input_data):

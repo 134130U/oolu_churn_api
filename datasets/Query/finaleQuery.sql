@@ -1,0 +1,21 @@
+select account_id,
+ account_number,
+ status,
+ total_amount,
+ invoce_model,
+ created_at,
+ total_payed,
+ balance,
+ group_name,
+ prev_payment,
+ prev_account_number,
+ slug,
+ cutoff_days,
+ day_disabled,
+ written_off,
+ expected_total_amount,
+ id_tenant,
+ commune,
+ region
+	   from account_analytics where status != 4
+	   --where created_at >='2020-10-16'

@@ -17,8 +17,8 @@ def run_training() -> None:
     print(data[config.TARGET].value_counts())
 
     pipeline.churn_pipe.fit(X_train, y_train)
-    print(pipeline.churn_pipe.predict_proba(X_train[config.FEATURES])[:, 1])
-    print(pipeline.churn_pipe.predict_proba(X_test[config.FEATURES])[:, 1])
+    print(pipeline.churn_pipe.predict_proba(X_train[config.FEATURES])[:, 1]*100)
+    print(pipeline.churn_pipe.predict_proba(X_test[config.FEATURES])[:, 1]*100)
 
     save_pipeline(pipeline_to_persist=pipeline.churn_pipe)
     print(100*'=')
